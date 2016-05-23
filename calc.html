@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <script>
+    var num1="";
+    var num2="";
+    var op="";
+    var finalResult="";
+    function myfun(val){ 
+
+      document.getElementById("disp").value+=val;
+
+    }
+    function opr(val){
+      op=val;
+      
+      num1=document.getElementById("disp").value;
+      
+      document.getElementById("disp").value="";
+
+    }
+
+    function result(){
+      if(op=="+")
+      {
+        num2=document.getElementById("disp").value;
+        finalResult=parseInt(num1)+parseInt(num2);
+        document.getElementById("disp").value="";
+        document.getElementById("disp").value=finalResult;
+      }
+      else
+        
+        if(op=="-")
+        {
+        num2=document.getElementById("disp").value;
+        finalResult=parseInt(num1)-parseInt(num2);
+        document.getElementById("disp").value="";
+        document.getElementById("disp").value=finalResult;
+      }
+      else
+        
+        if(op=="*")
+        {
+        num2=document.getElementById("disp").value;
+        finalResult=parseInt(num1)*parseInt(num2);
+        document.getElementById("disp").value="";
+        document.getElementById("disp").value=finalResult;
+      }
+      else
+        
+        if(op=="/")
+        {
+        num2=document.getElementById("disp").value;
+        finalResult=parseInt(num1)/parseInt(num2);
+        document.getElementById("disp").value="";
+        document.getElementById("disp").value=finalResult;
+
+      }
+
+    }
+    function justClear(){
+      document.getElementById("disp").value="";
+    }
+
+  </script>
+  <body>
+
+    <div>
+      
+      <table table border="1" cellspacing="10">
+        <tr>
+          <th> <input id="disp" >  </th>
+        </tr>
+
+      </table>
+      <table table border="1" cellspacing="12">
+        <tr>
+          <td><button onclick='myfun("M")'>M</button></td> 
+          <td><button onclick='myfun("M+")'>M+</button></td>
+          <td><button onclick='justClear()'>CE</button></td>
+          <td><button onclick='justClear()'>C</button></td>
+        </tr>
+
+        <tr>
+          <td><button onclick='myfun("7")'>7</button></td> 
+          <td><button onclick='myfun("8")'>8</button></td>
+          <td><button onclick='myfun("9")'>9</button></td>
+          <td><button onclick='opr("/")'> /</button></td>
+        </tr>
+
+        <tr>
+          <td><button onclick='myfun("4")'>4</button></td> 
+          <td><button onclick='myfun("5")'>5</button></td>
+          <td><button onclick='myfun("6")'>6</button></td>
+          <td><button onclick='opr("*")'> *</button></td>
+        </tr>
+
+        <tr>
+          <td><button onclick='myfun("1")'>1</button></td> 
+          <td><button onclick='myfun("2")'>2</button></td>
+          <td><button onclick='myfun("3")'>3</button></td>
+          <td><button onclick='opr("-")'> -</button></td>
+        </tr>
+
+
+        <tr>
+          <td><button onclick='myfun("0")'>0</button></td> 
+          <td><button onclick='myfun(".")'>.</button></td>
+          <td><button onclick='result("=")'>=</button></td>
+          <td><button onclick='opr("+")'>+</button></td>
+        </tr>
+        
+        
+        
+
+      </table>
+      
+    </div>
+  </body>
+</html>
